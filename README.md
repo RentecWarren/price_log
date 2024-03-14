@@ -1,3 +1,7 @@
+# Price Logger 
+
+An app for logging the proces of consumer goods
+
 # Django React Boilerplate
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
@@ -171,7 +175,11 @@ After completing ALL of the above, remove this `Project bootstrap` section from 
 
 #### Setup Celery
 
--   `poetry run celery --app=myproject worker --loglevel=info`
+brew services start rabbitmq
+-   `poetry run celery --app=pricelog worker --loglevel=info`
+
+[2024-03-13 22:54:05,214: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 61] Connection refused.
+Trying again in 6.00 seconds... (3/100)
 
 #### Setup Redis
 
@@ -208,6 +216,12 @@ mv proj_main.yml .github/workflows/main.yml
 ```
 
 ## Production Deployment
+
+## Git push
+git remote add price_log https://github.com/RentecWarren
+git remote add origin https://github.com/RentecWarren
+git push -u origin master
+
 
 ### Setup
 
